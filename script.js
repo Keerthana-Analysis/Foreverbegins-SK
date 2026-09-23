@@ -35,29 +35,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
   });
 
-  // SOFT GRADUAL FADE-OUT ON SCROLL
-  if (chapterDate) {
-    const silhouetteObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          silLeft.classList.add('silhouette-hidden');
-          silRight.classList.add('silhouette-hidden');
-        } else {
-          const rect = chapterDate.getBoundingClientRect();
-          if (rect.top > window.innerHeight) {
-            silLeft.classList.remove('silhouette-hidden');
-            silRight.classList.remove('silhouette-hidden');
-          }
-        }
-      });
-    }, { 
-      root: null,
-      rootMargin: "0px 0px -150px 0px", // Starts fading nicely before reaching the section
-      threshold: 0
-    });
+  // SILHOUETTE: visible in Chapter 1, hidden in Chapter 2
+const chapter1 = document.getElementById('chapter1');
+const chapter2 = document.getElementById('chapter2');
 
-    silhouetteObserver.observe(chapterDate);
-  }
+if (chapter1 && chapter2) {
+  const silhouetteObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.target === chapter1 && entry.isIntersecting) {
+        if (silLeft) silLeft.classList.remove('silhouette-hidden');
+        if (silRight) silRight.classList.remove('silhouette-hidden');
+      }
+
+      if (entry.target === chapter2 && entry.isIntersecting) {
+        if (silLeft) silLeft.classList.add('silhouette-hidden');
+        if (silRight) silRight.classList.add('silhouette-hidden');
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.15
+  });
+
+  silhouetteObserver.observe(chapter1);
+  silhouetteObserver.observe(chapter2);
+}
 
   // FADE IN TEXT ELEMENTS ON SCROLL
   const dustObserver = new IntersectionObserver((entries) => {
