@@ -1158,3 +1158,98 @@ body.locked {
     max-width: 58vw;
   }
 }
+
+@media (max-width: 600px) {
+  .chapter3-memory-cards {
+    width: 100%;
+    max-width: none;
+    height: 390px;
+    margin: 25px auto 0;
+  }
+
+  .chapter3-memory-card {
+    padding: 16px 18px;
+  }
+
+  .chapter3-memory-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .memory-card-one {
+    width: 82%;
+    top: 5px;
+    left: 3%;
+    transform: rotate(-2deg);
+  }
+
+  .memory-card-two {
+    width: 82%;
+    top: 120px;
+    right: 3%;
+    transform: rotate(1.5deg);
+  }
+
+  .memory-card-three {
+    width: 82%;
+    bottom: 25px;
+    left: 8%;
+    transform: rotate(-1deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .event-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+}
+
+.reception-address {
+  font-size: 0.85rem;
+  color: #566573;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .reception-address {
+    font-size: 0.8rem;
+    line-height: 1.45;
+    max-width: 280px;
+    margin: 5px auto 0;
+  }
+}
+
+@media (max-width: 600px) {
+  #chapter-invitation .romantic-title {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #chapter-gallery .cinematic-heading {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .final-signature {
+    font-size: 1.2rem !important;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .final-with-love {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .story-continues {
+    font-size: 0.75rem !important;
+  }
+}
