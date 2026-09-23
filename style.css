@@ -1265,21 +1265,31 @@ body.locked {
 
 @media screen and (max-width: 600px) {
   #chapter-reception .cinematic-heading {
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
     white-space: nowrap !important;
   }
 }
 
 @media screen and (max-width: 600px) {
   #chapter-reception .event-card p:first-child {
-    font-size: 1.2rem !important;
+    font-size: 1.5rem !important;
     white-space: nowrap !important;
   }
 }
 
 @media screen and (max-width: 600px) {
   #chapter-wedding .cinematic-heading {
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
     white-space: nowrap !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #chapter-date h2,
+  #chapter-date h3 {
+    white-space: nowrap !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1.4rem !important;
   }
 }
