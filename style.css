@@ -1290,3 +1290,14 @@ body.locked {
     white-space: nowrap !important;
   }
 }
+
+@media (max-width: 600px) {
+  .dust-text {
+    transform: translateY(45px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+  }
+
+  .dust-text.in-view {
+    transform: translateY(0);
+  }
+}
