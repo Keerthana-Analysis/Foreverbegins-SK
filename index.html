@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sivaraman & Keerthana — A Forever Story</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-control" id="music-btn" aria-label="Toggle Audio">
+    <svg id="music-icon-on" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+  </button>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="fixed-background">
+    <div class="misty-mountains"></div>
+  </div>
+
+  <div class="mountain-background-image"></div>
+
+  <div class="floral-frame-top-right"></div>
+  <div class="floral-frame-bottom-left"></div>
+
+  <img class="silhouette-right" id="sil-right" src="right.png" alt="Couple Silhouette Right">
+
+  <div id="opening-screen">
+    <div class="envelope-header-text">
+      <p style="font-family: var(--font-romantic); font-size: 2.5rem; color: #f2f4f4;">With Love 💕</p>
+      <p style="font-size: 0.95rem; margin-top: 5px; color: #aeb6bf; letter-spacing: 0.5px;">A little story is waiting for you...</p>
+    </div>
+
+    <div class="envelope-wrapper" id="envelope-wrapper">
+      <div class="envelope-flap"></div>
+      <div class="envelope-bottom"></div>
+      <div class="wax-seal" id="wax-seal-btn" title="Tap the heart to open"></div>
+    </div>
+
+    <p class="tap-hint">Tap the heart to open ✨</p>
+  </div>
+
+  <div class="story-container">
+    <section class="chapter" id="chapter1">
+      <div class="chapter1-garden" aria-hidden="true">
+  <img src="assets/flower-garden.png" alt="">
+</div>
+      <div class="dust-text">
+                <h1 class="romantic-title">Every forever begins with a simple hello...</h1>
+        <p class="story-body" style="font-style: italic;">A little story of friendship, love & forever.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="chapter2">
+  <div class="dust-text chapter2-name-reveal">
+
+    <p class="story-body chapter2-intro">
+      With love and joy, here is the story of...
+    </p>
+
+    <div class="chapter2-names">
+
+      <div class="name-reveal-wrap">
+        <canvas class="name-dust-canvas" id="sivaraman-dust"></canvas>
+        <h2 class="romantic-title reveal-name">Sivaraman</h2>
+      </div>
+
+      <p class="chapter2-amp">&</p>
+
+      <div class="name-reveal-wrap">
+        <canvas class="name-dust-canvas" id="keerthana-dust"></canvas>
+        <h2 class="romantic-title reveal-name">Keerthana</h2>
+      </div>
+
+    </div>
+
+    <p class="story-body chapter2-story">
+      Some stories begin with a moment.<br>
+      Ours began with a feeling… and grew into a lifetime.
+    </p>
+
+  </div>
+</section>
+
+<section class="chapter" id="chapter3">
+  <div class="dust-text chapter3-memory-layout">
+
+    <h3 class="cinematic-heading">Little Moments</h3>
+
+    <div class="chapter3-memory-cards">
+
+      <div class="chapter3-memory-card memory-card-one">
+        <p>
+          There was no grand proposal.<br>
+          Just two hearts realizing the same thing. 💕✨
+        </p>
+      </div>
+
+      <div class="chapter3-memory-card memory-card-two">
+        <p>
+          Hours that felt like minutes. Endless conversations.<br>
+          And moments we wished would last a little longer. 💕✨
+        </p>
+      </div>
+
+      <div class="chapter3-memory-card memory-card-three">
+        <p>
+          We never had to choose between<br>
+          being best friends and being in love.<br>
+          Somehow, we became both. 💕✨
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <section class="chapter" id="chapter4">
+      <div class="dust-text">
+        <p class="story-body">
+          Somewhere along the way, two hearts found each other.<br>
+          That love became a promise.<br>
+          And with the love, blessings, and wishes of our families...
+        </p>
+        <h2 class="cinematic-heading" style="margin-top: 30px; font-size: 2.2rem; color: #0e2a47;">WE’RE GETTING MARRIED!</h2>
+      </div>
+    </section>
+
+    <section class="chapter" id="chapter-climax">
+      <div class="dust-text">
+        <h2 class="romantic-title" style="font-size: 3.5rem; color: #b8860b;">Forever Begins.</h2>
+        <p class="story-body" style="margin-top: 15px;">You’re cordially invited to be a part of our forever.</p>
+      </div>
+    </section>
+
+    <section class="chapter" id="chapter-date">
+      <div class="dust-text">
+        <h3 class="cinematic-heading">Save The DATE!</h3>
+        <p class="story-body">A date written in our hearts forever ✨</p>
+
+        <div class="scratch-wrapper">
+          <div class="scratch-reveal-content">
+            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #7f8c8d;">Save The Date</p>
+            <p style="font-family: var(--font-heading); font-size: 2.2rem; color: #1b4f72; font-weight: 700; margin: 4px 0;">13 NOV 2026</p>
+            <p style="font-size: 0.85rem; color: #b8860b; font-weight: 500;">Chennai, Tamil Nadu</p>
+          </div>
+          <canvas class="scratch-canvas" id="scratch-canvas"></canvas>
+        </div>
+
+        <div id="countdown-section" style="opacity: 0; transition: opacity 1s ease; margin-top: 20px;">
+          <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: #2c3e50;">Counting down to Forever</p>
+          <div class="countdown-grid">
+            <div class="timer-box"><div class="timer-val" id="days">00</div><div class="timer-lbl">Days</div></div>
+            <div class="timer-box"><div class="timer-val" id="hours">00</div><div class="timer-lbl">Hours</div></div>
+            <div class="timer-box"><div class="timer-val" id="mins">00</div><div class="timer-lbl">Mins</div></div>
+            <div class="timer-box"><div class="timer-val" id="secs">00</div><div class="timer-lbl">Secs</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="chapter-wedding">
+      <div class="dust-text">
+        <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: #b8860b; font-weight: 600;">Event 01</p>
+        <h2 class="cinematic-heading" style="margin-bottom: 20px;">The Marriage Ceremony</h2>
+        
+        <div class="event-card">
+          <p style="font-family: var(--font-romantic); font-size: 2.2rem; color: #1a365d;">Muhurtham</p>
+          <p style="font-size: 1.1rem; font-weight: 600; color: #2c3e50; margin: 10px 0;">Friday, 13th November 2026</p>
+          <p style="font-size: 0.95rem; color: #27ae60; font-weight: 600; margin-bottom: 15px;">6:30 AM onwards</p>
+          <hr style="border: none; border-top: 1px solid #e5e8e8; margin: 15px 0;">
+          <p style="font-family: var(--font-heading); font-size: 1.1rem; color: #1b4f72;">Vadapalani Murugan Temple</p>
+          <p style="font-size: 0.9rem; color: #566573; margin-top: 5px;">Vadapalani, Chennai, Tamil Nadu</p>
+
+          <a href="https://maps.google.com/?q=Vadapalani+Murugan+Temple+Chennai" target="_blank" class="map-btn">
+            📍 View Location on Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+
+        </section>
+
+    <!-- ADD THIS -->
+
+    <section class="event-timeline-connector" aria-hidden="true">
+      <div class="timeline-butterfly butterfly-one">🦋</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-star">✦</div>
+      <div class="timeline-butterfly butterfly-two">🦋</div>
+    </section>
+
+    <section class="chapter" id="chapter-reception">
+
+    <section class="chapter" id="chapter-reception">
+      <div class="dust-text">
+        <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: #b8860b; font-weight: 600;">Event 02</p>
+        <h2 class="cinematic-heading" style="margin-bottom: 20px;">The Reception</h2>
+        
+        <div class="event-card">
+          <p style="font-family: var(--font-romantic); font-size: 2.2rem; color: #1a365d;">Celebration & Dinner</p>
+          <p style="font-size: 1.1rem; font-weight: 600; color: #2c3e50; margin: 10px 0;">Friday, 13th November 2026</p>
+          <p style="font-size: 0.95rem; color: #27ae60; font-weight: 600; margin-bottom: 15px;">5:30 PM onwards</p>
+          <hr style="border: none; border-top: 1px solid #e5e8e8; margin: 15px 0;">
+          <p style="font-family: var(--font-heading); font-size: 1.05rem; color: #1b4f72;">Valasaravakkam Reception Hall</p>
+          <p style="font-size: 0.85rem; color: #566573; margin-top: 5px;">Indira Gandhi Rd, Alwartirunagar, Valasaravakkam, Chennai, Tamil Nadu 600087</p>
+
+          <a href="https://share.google/mYlhRKD1FHWJH37gc" target="_blank" class="map-btn">
+            📍 View Reception Map Location
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="chapter-invitation">
+      <div class="dust-text">
+        <h2 class="romantic-title" style="font-size: 3.5rem;">With Warm Hearts</h2>
+        <p class="story-body" style="font-size: 1.1rem;">
+          After all the waiting,<br>
+          the day has finally arrived.<br><br>
+          We’ve been waiting for this beautiful day...<br>
+          and your presence & blessings would make our celebration complete.
+        </p>
+      </div>
+    </section>
+
+    
+<section class="chapter" id="chapter-gallery" style="padding-bottom: 120px;">
+  <div class="dust-text" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+    <h3 class="cinematic-heading">Memories & Moments</h3>
+    <p class="story-body" style="font-size: 0.9rem;">The story continues into a lifetime of memories...</p>
+
+    <div class="gallery-container">
+
+      <div class="gallery-track" id="gallery-track">
+
+        <div class="gallery-slide" style="background-image: linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.25)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85');"></div>
+
+        <div class="gallery-slide" style="background-image: linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.25)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=85');"></div>
+
+        <div class="gallery-slide" style="background-image: linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.25)), url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=85');"></div>
+
+      </div>
+
+      <button class="gallery-arrow gallery-prev" id="gallery-prev" aria-label="Previous memory">
+        ‹
+      </button>
+
+      <button class="gallery-arrow gallery-next" id="gallery-next" aria-label="Next memory">
+        ›
+      </button>
+
+      <div class="gallery-counter">
+        <span id="gallery-current">01</span>
+        <span class="gallery-counter-divider"> / </span>
+        <span id="gallery-total">03</span>
+      </div>
+
+    </div>
+
+    <!-- FINAL CLOSING MESSAGE -->
+
+<p style="
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  color: #1a365d;
+  margin-top: 40px;
+  margin-bottom: 12px;
+">
+  And so, our story continues...
+</p>
+
+<p style="
+  font-family: var(--font-romantic);
+  font-size: 1.6rem;
+  color: #b8860b;
+  margin: 0 0 8px 0;
+">
+  With Love,
+</p>
+
+<p style="
+  font-family: var(--font-romantic);
+  font-size: 2.5rem;
+  color: #1b4f72;
+  margin-top: 0;
+">
+  Sivaraman & Keerthana
+</p>
+  </div>
+</section>
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
