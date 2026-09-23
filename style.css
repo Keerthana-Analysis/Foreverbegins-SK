@@ -126,6 +126,15 @@ body.locked {
   width: auto;
 }
 
+@media (max-width: 600px) {
+  .silhouette-right {
+    right: 8px;
+    bottom: 8px !important;
+    height: 18vh;
+    width: auto;
+  }
+}
+
 /* GRADUAL SLOW FADE OUT CLASS */
 .silhouette-hidden {
   opacity: 0 !important;
