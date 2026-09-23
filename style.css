@@ -1253,3 +1253,12 @@ body.locked {
     font-size: 0.75rem !important;
   }
 }
+
+@media screen and (max-width: 600px) {
+  #chapter-gallery h3.cinematic-heading {
+    font-size: 1rem !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
