@@ -1301,3 +1301,12 @@ body.locked {
     transform: translateY(0);
   }
 }
+
+/* ===== MEMORY PHOTO CROP FIX ===== */
+/* Keep the original gallery style for all other photos */
+
+.gallery-slide.memory-no-crop {
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
