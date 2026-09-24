@@ -160,38 +160,6 @@ const slides = Array.from(
 
 const totalSlides = slides.length;
 
-/* ===== MOBILE PHOTO SIZE ADJUSTMENT ===== */
-function adjustMobilePhotoSizes() {
-  if (window.innerWidth > 600) return;
-
-  slides.forEach(slide => {
-    const bg = slide.style.backgroundImage;
-    const match = bg.match(/url\(["']?(.*?)["']?\)/);
-
-    if (!match) return;
-
-    const img = new Image();
-
-    img.onload = () => {
-      const slideWidth = slide.offsetWidth;
-      const photoRatio = img.naturalHeight / img.naturalWidth;
-
-      let newHeight = slideWidth * photoRatio;
-
-      /* Keep the gallery visually balanced */
-      newHeight = Math.max(220, Math.min(newHeight, 315));
-
-      slide.style.height = `${newHeight}px`;
-    };
-
-    img.src = match[1];
-  });
-}
-
-adjustMobilePhotoSizes();
-
-window.addEventListener('resize', adjustMobilePhotoSizes);
-
 const currentCounter =
   document.getElementById('gallery-current');
 
