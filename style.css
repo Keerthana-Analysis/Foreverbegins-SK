@@ -1310,3 +1310,12 @@ body.locked {
   background-position: center center !important;
   background-repeat: no-repeat !important;
 }
+
+/* ===== MOBILE MEMORY PHOTO FIX ===== */
+@media (max-width: 600px) {
+  .gallery-slide {
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+}
