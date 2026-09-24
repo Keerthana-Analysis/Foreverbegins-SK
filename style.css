@@ -478,7 +478,8 @@ body.locked {
   left: 50%;
 
   width: 68%;
-  height: 350px;
+  height: auto;
+  aspect-ratio: var(--photo-ratio);
 
   border-radius: 18px;
 
@@ -692,7 +693,6 @@ body.locked {
 
   .gallery-slide {
     width: 72%;
-    height: 315px;
   }
 
   .gallery-slide.gallery-left {

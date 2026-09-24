@@ -160,6 +160,24 @@ const slides = Array.from(
 
 const totalSlides = slides.length;
 
+slides.forEach(slide => {
+  const bg = getComputedStyle(slide).backgroundImage;
+  const match = bg.match(/url\(["']?(.*?)["']?\)/);
+
+  if (!match) return;
+
+  const img = new Image();
+
+  img.onload = () => {
+    slide.style.setProperty(
+      '--photo-ratio',
+      `${img.naturalWidth} / ${img.naturalHeight}`
+    );
+  };
+
+  img.src = match[1];
+});
+
 const currentCounter =
   document.getElementById('gallery-current');
 
