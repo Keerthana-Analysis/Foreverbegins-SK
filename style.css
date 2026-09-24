@@ -1302,30 +1302,5 @@ body.locked {
   }
 }
 
-/* ===== MEMORY PHOTO CROP FIX ===== */
-/* Keep the original gallery style for all other photos */
 
-.gallery-slide.memory-no-crop {
-  background-size: contain !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-}
-
-
-/* ===== MOBILE MEMORY PHOTO FIX ===== */
-
-@media (max-width: 600px) {
-
-  .gallery-slide {
-    width: 88% !important;
-    height: 250px !important;
-
-    background-size: contain !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-
-    border-radius: 18px;
-  }
-
-}
 
