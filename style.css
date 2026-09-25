@@ -478,9 +478,7 @@ body.locked {
   left: 50%;
 
   width: 68%;
-  height: auto;
-  aspect-ratio: var(--photo-ratio);
-
+  height: 350px;
   border-radius: 18px;
 
   background-size: cover;
