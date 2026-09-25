@@ -13,6 +13,5 @@ window.memoryPhotos = [
   "memory12.JPG",
   "memory13.JPG",
   "memory14.JPG",
-  "memory15.JPG",
-  "memory16.jpeg"
+  "memory15.JPG"
 ];
