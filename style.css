@@ -481,7 +481,7 @@ body.locked {
   height: 350px;
   border-radius: 18px;
 
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 
   transform-origin: center center;
