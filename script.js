@@ -154,6 +154,38 @@ let currentSlide = 0;
 
 const track = document.getElementById('gallery-track');
 
+
+// ===== LOAD PHOTOS FROM memories-list.js =====
+
+if (
+  track &&
+  Array.isArray(window.memoryPhotos)
+) {
+
+  track.innerHTML = '';
+
+  window.memoryPhotos.forEach((photo) => {
+
+    const slide =
+      document.createElement('div');
+
+    slide.className = 'gallery-slide';
+
+    slide.style.backgroundImage =
+      `linear-gradient(
+        rgba(0,0,0,0.08),
+        rgba(0,0,0,0.25)
+      ), url('Memories/${photo}')`;
+
+    track.appendChild(slide);
+
+  });
+
+}
+
+
+// ===== GET GALLERY ELEMENTS =====
+
 const slides = Array.from(
   track.querySelectorAll('.gallery-slide')
 );
@@ -177,6 +209,8 @@ totalCounter.textContent =
   String(totalSlides).padStart(2, '0');
 
 
+// ===== CIRCULAR DISTANCE =====
+
 function getCircularDistance(index, current, total) {
 
   let distance = index - current;
@@ -192,6 +226,8 @@ function getCircularDistance(index, current, total) {
   return distance;
 }
 
+
+// ===== UPDATE GALLERY =====
 
 function updateGallery() {
 
@@ -261,6 +297,8 @@ function updateGallery() {
 }
 
 
+// ===== GO TO SLIDE =====
+
 window.goToSlide = function(index) {
 
   currentSlide =
@@ -269,6 +307,8 @@ window.goToSlide = function(index) {
   updateGallery();
 };
 
+
+// ===== NEXT / PREVIOUS =====
 
 function nextMemory() {
 
@@ -300,7 +340,7 @@ prevButton.addEventListener(
 );
 
 
-/* Touch swipe */
+// ===== TOUCH SWIPE =====
 
 let touchStartX = 0;
 let touchStartY = 0;
@@ -338,8 +378,6 @@ track.addEventListener(
       touchEndY - touchStartY;
 
 
-    /* Only react to a horizontal swipe */
-
     if (
       Math.abs(deltaX) > 40 &&
       Math.abs(deltaX) > Math.abs(deltaY)
@@ -362,7 +400,7 @@ track.addEventListener(
 );
 
 
-/* Initial gallery state */
+// ===== INITIAL GALLERY STATE =====
 
 updateGallery();
 
