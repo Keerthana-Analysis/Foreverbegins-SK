@@ -182,41 +182,15 @@ img.alt = 'Memory';
 img.loading = 'eager';
 img.decoding = 'async';
 
-function fitFrameToImage() {
-  const imageWidth = img.naturalWidth;
-  const imageHeight = img.naturalHeight;
-
-  if (!imageWidth || !imageHeight) return;
-
-  const imageRatio = imageWidth / imageHeight;
-
-  const maxWidth = slide.clientWidth;
-  const maxHeight = slide.clientHeight;
-
-  let frameWidth = maxWidth;
-  let frameHeight = frameWidth / imageRatio;
-
-  if (frameHeight > maxHeight) {
-    frameHeight = maxHeight;
-    frameWidth = frameHeight * imageRatio;
-  }
-
-  frame.style.width = `${frameWidth}px`;
-  frame.style.height = `${frameHeight}px`;
-}
-
-img.addEventListener('load', fitFrameToImage);
 
 slide.appendChild(img);
 track.appendChild(slide);
 
-if (img.complete) {
-  fitFrameToImage();
-}
 
 });
 
 }
+
 
 
 // ===== GET GALLERY ELEMENTS =====
