@@ -170,11 +170,6 @@ if (
 
   slide.className = 'gallery-slide';
 
-  const frame =
-    document.createElement('div');
-
-  frame.className =
-    'gallery-photo-frame';
 
   const img =
     document.createElement('img');
@@ -212,8 +207,7 @@ function fitFrameToImage() {
 
 img.addEventListener('load', fitFrameToImage);
 
-frame.appendChild(img);
-slide.appendChild(frame);
+slide.appendChild(img);
 track.appendChild(slide);
 
 if (img.complete) {
