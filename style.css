@@ -480,10 +480,7 @@ body.locked {
   width: 68%;
   height: 350px;
   border-radius: 18px;
-
-  background-size: contain;
-  background-position: center;
-
+  
   transform-origin: center center;
 
   transition:
@@ -504,6 +501,31 @@ body.locked {
 
 .gallery-slide:active {
   cursor: grabbing;
+}
+
+.gallery-photo-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.gallery-photo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: 18px;
 }
 
 /* CENTER — main memory */

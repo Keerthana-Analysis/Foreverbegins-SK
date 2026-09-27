@@ -165,21 +165,39 @@ if (
   track.innerHTML = '';
 
   window.memoryPhotos.forEach((photo) => {
+  const slide =
+    document.createElement('div');
 
-    const slide =
-      document.createElement('div');
+  slide.className = 'gallery-slide';
 
-    slide.className = 'gallery-slide';
+  const frame =
+    document.createElement('div');
 
-    slide.style.backgroundImage =
-      `linear-gradient(
-        rgba(0,0,0,0.08),
-        rgba(0,0,0,0.25)
-      ), url('Memories/${photo}')`;
+  frame.className =
+    'gallery-photo-frame';
 
-    track.appendChild(slide);
+  const img =
+    document.createElement('img');
 
-  });
+  img.className =
+    'gallery-photo';
+
+  img.src =
+    `Memories/${photo}`;
+
+  img.alt =
+    'Memory';
+
+  img.loading =
+    'eager';
+
+  img.decoding =
+    'async';
+
+  frame.appendChild(img);
+  slide.appendChild(frame);
+  track.appendChild(slide);
+});
 
 }
 
