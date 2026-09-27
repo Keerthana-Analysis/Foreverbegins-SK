@@ -182,21 +182,44 @@ if (
   img.className =
     'gallery-photo';
 
-  img.src =
-    `Memories/${photo}`;
+  img.src = `Memories/${photo}`;
+img.alt = 'Memory';
+img.loading = 'eager';
+img.decoding = 'async';
 
-  img.alt =
-    'Memory';
+function fitFrameToImage() {
+  const imageWidth = img.naturalWidth;
+  const imageHeight = img.naturalHeight;
 
-  img.loading =
-    'eager';
+  if (!imageWidth || !imageHeight) return;
 
-  img.decoding =
-    'async';
+  const imageRatio = imageWidth / imageHeight;
 
-  frame.appendChild(img);
-  slide.appendChild(frame);
-  track.appendChild(slide);
+  const maxWidth = slide.clientWidth;
+  const maxHeight = slide.clientHeight;
+
+  let frameWidth = maxWidth;
+  let frameHeight = frameWidth / imageRatio;
+
+  if (frameHeight > maxHeight) {
+    frameHeight = maxHeight;
+    frameWidth = frameHeight * imageRatio;
+  }
+
+  frame.style.width = `${frameWidth}px`;
+  frame.style.height = `${frameHeight}px`;
+}
+
+img.addEventListener('load', fitFrameToImage);
+
+frame.appendChild(img);
+slide.appendChild(frame);
+track.appendChild(slide);
+
+if (img.complete) {
+  fitFrameToImage();
+}
+
 });
 
 }
