@@ -1307,17 +1307,4 @@ body.locked {
 
 /* ===== WEBSITE DECORATIVE BORDER ===== */
 
-body::before {
-  content: "";
-
-  position: fixed;
-
-  inset: 0;
-
-  background: url("assets/Border.png") center center / 100% 100% no-repeat;
-
-  pointer-events: none;
-
-  z-index: 9999;
-}
 
