@@ -889,7 +889,7 @@ body.locked {
   width: 180px;
   height: auto;
   left: 50%;
-  transform: translateX(-100%);
+  transform: translateX(-90%);
   opacity: 0;
   filter: blur(8px);
 }
