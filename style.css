@@ -884,6 +884,14 @@ body.locked {
   position: relative;
 }
 
+.chapter2-name-image {
+  position: relative;  
+  width: 180px;
+  height: auto;
+  left: 50%;
+  transform: translateX(-120%);
+}
+
 .chapter2-intro {
   margin-bottom: 30px;
 }
@@ -1305,12 +1313,5 @@ body.locked {
   }
 }
 
-/* ===== CHAPTER 2 NAME REVEAL ===== */
 
-.chapter2-name-reveal {
-  display: block;
-  width: 180px;
-  height: auto;
-  margin: 20px auto 0;
-}
 
