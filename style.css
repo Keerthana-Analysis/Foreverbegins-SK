@@ -1305,6 +1305,12 @@ body.locked {
   }
 }
 
-/* ===== WEBSITE DECORATIVE BORDER ===== */
+/* ===== CHAPTER 2 NAME REVEAL ===== */
 
+.chapter2-name-reveal {
+  display: block;
+  width: 180px;
+  height: auto;
+  margin: 20px auto 0;
+}
 
