@@ -35,6 +35,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
   });
 
+  // ===== CHERRY BLOSSOM SCROLL FADE =====
+
+const cherryLeaves = document.querySelector('.cherry-leaves');
+const memoriesSection = document.getElementById('chapter-gallery');
+
+function updateCherryVisibility() {
+  if (!cherryLeaves || !memoriesSection) return;
+
+  const memoriesTop = memoriesSection.getBoundingClientRect().top;
+  console.log("MEMORIES TOP:", memoriesTop);
+
+  if (memoriesTop <= window.innerHeight) {
+  cherryLeaves.style.display = 'none';
+
+  document.querySelectorAll('.particle.petal').forEach(petal => {
+    petal.remove();
+  });
+} else {
+  cherryLeaves.style.display = 'block';
+}
+}
+
+window.addEventListener('scroll', updateCherryVisibility);
+window.addEventListener('resize', updateCherryVisibility);
+
+updateCherryVisibility();
+
   // SILHOUETTE: visible in Chapter 1, hidden in Chapter 2
 const chapter1 = document.getElementById('chapter1');
 const chapter2 = document.getElementById('chapter2');

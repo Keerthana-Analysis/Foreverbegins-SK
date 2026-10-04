@@ -1353,12 +1353,11 @@ body.locked {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   perspective: 900px;
-  z-index: 20;
-  overflow: hidden;
+  z-index: 5;
 }
 
 .cherry-leaves span {
@@ -1482,4 +1481,41 @@ body.locked {
     transform: translate(-20px, 120vh) rotate(40deg);
     opacity: 0;
   }
+}
+
+/* ===== CHERRY BLOSSOM - 3D DEPTH ===== */
+
+.cherry-leaves span:nth-child(-n+5) {
+  width: 28px;
+  height: 14px;
+  filter: blur(0px);
+  animation-duration: 8s;
+}
+
+.cherry-leaves span:nth-child(n+6):nth-child(-n+10) {
+  width: 22px;
+  height: 11px;
+  filter: blur(0.4px);
+  animation-duration: 10s;
+}
+
+.cherry-leaves span:nth-child(n+11) {
+  width: 16px;
+  height: 8px;
+  filter: blur(1px);
+  animation-duration: 12s;
+}
+
+/* ===== CHERRY BLOSSOM - NATURAL SWAY ===== */
+
+.cherry-leaves span:nth-child(3n) {
+  animation-timing-function: ease-in-out;
+}
+
+.cherry-leaves span:nth-child(3n + 1) {
+  animation-delay: -2s;
+}
+
+.cherry-leaves span:nth-child(3n + 2) {
+  animation-delay: -5s;
 }
