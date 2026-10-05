@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const silLeft = document.getElementById('sil-left');
   const silRight = document.getElementById('sil-right');
   const chapterDate = document.getElementById('chapter-date');
+  
   let isPlaying = false;
+
 
   function toggleAudio() {
     if (isPlaying) {
@@ -39,22 +41,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const cherryLeaves = document.querySelector('.cherry-leaves');
 const memoriesSection = document.getElementById('chapter-gallery');
+const storyContainer = document.querySelector('.story-container');
 
 function updateCherryVisibility() {
   if (!cherryLeaves || !memoriesSection) return;
 
-  const memoriesTop = memoriesSection.getBoundingClientRect().top;
-  console.log("MEMORIES TOP:", memoriesTop);
+  const rect = memoriesSection.getBoundingClientRect();
 
-  if (memoriesTop <= window.innerHeight) {
-  cherryLeaves.style.display = 'none';
+  const memoriesVisible =
+    rect.top < window.innerHeight &&
+    rect.bottom > 0;
+
+  cherryLeaves.style.display =
+    memoriesVisible ? 'none' : 'block';
 
   document.querySelectorAll('.particle.petal').forEach(petal => {
-    petal.remove();
+    petal.style.display =
+      memoriesVisible ? 'none' : 'block';
   });
-} else {
-  cherryLeaves.style.display = 'block';
 }
+
+if (storyContainer) {
+  storyContainer.addEventListener('scroll', updateCherryVisibility);
 }
 
 window.addEventListener('scroll', updateCherryVisibility);
@@ -441,15 +449,17 @@ track.addEventListener(
 updateGallery();
 
   function createPetalShower() {
-    for (let i = 0; i < 20; i++) {
-      const petal = document.createElement('div');
-      petal.className = 'particle petal';
-      petal.style.left = Math.random() * 100 + 'vw';
-      petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
-      petal.style.animationDelay = (Math.random() * 3) + 's';
-      document.body.appendChild(petal);
-    }
+  for (let i = 0; i < 20; i++) {
+    const petal = document.createElement('div');
+    petal.className = 'particle petal';
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+    petal.style.animationDelay = (Math.random() * 3) + 's';
+    document.body.appendChild(petal);
   }
+
+  updateCherryVisibility();
+}
 
   function triggerConfetti() {
   const cCanvas = document.getElementById('confetti-canvas');

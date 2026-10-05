@@ -768,6 +768,7 @@ body.locked {
   animation: fall 10s linear infinite;
 }
 
+
 @keyframes fall {
   0% { transform: translateY(-10vh) rotate(0deg); }
   100% { transform: translateY(110vh) rotate(360deg); }
@@ -1359,6 +1360,7 @@ body.locked {
   perspective: 900px;
   z-index: 5;
 }
+
 
 .cherry-leaves span {
   position: absolute;
