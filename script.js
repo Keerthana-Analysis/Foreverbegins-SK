@@ -65,6 +65,36 @@ if (storyContainer) {
   storyContainer.addEventListener('scroll', updateCherryVisibility);
 }
 
+if (storyContainer) {
+  storyContainer.addEventListener('scroll', () => {
+    const memoriesSection =
+      document.getElementById('chapter-gallery');
+
+    if (!memoriesSection) return;
+
+    const rect =
+      memoriesSection.getBoundingClientRect();
+
+    if (rect.top > 0) {
+      createGoldenDust();
+    }
+  });
+}
+
+window.addEventListener('scroll', () => {
+  const memoriesSection =
+    document.getElementById('chapter-gallery');
+
+  if (!memoriesSection) return;
+
+  const rect =
+    memoriesSection.getBoundingClientRect();
+
+  if (rect.top > 0) {
+    createGoldenDust();
+  }
+});
+
 window.addEventListener('scroll', updateCherryVisibility);
 window.addEventListener('resize', updateCherryVisibility);
 
@@ -575,6 +605,7 @@ if (chapter2) {
   const startNameReveal = () => {
     if (chapter2Started) return;
     chapter2Started = true;
+        createGoldenDust();
 
     /* Intro appears first */
     intro.style.opacity = '1';
@@ -876,6 +907,62 @@ if (chapter2) {
     requestAnimationFrame(animate);
   }, delay);
 }
+
+
+  // ===== GOLDEN DUST FLYING EFFECT =====
+
+let goldenDustInterval = null;
+
+  function createGoldenDust() {
+    if (goldenDustInterval) return;
+
+    goldenDustInterval = setInterval(() => {
+
+      // Stop completely when Memories & Moments section begins
+      const memoriesSection =
+        document.getElementById('chapter-gallery');
+
+      if (memoriesSection) {
+        const rect =
+          memoriesSection.getBoundingClientRect();
+
+        if (rect.top <= window.innerHeight) {
+          document.querySelectorAll('.golden-dust').forEach(dust => {
+          dust.remove();
+         });
+
+          return;
+        } 
+      }
+
+      const dust =
+        document.createElement('div');
+
+      dust.className = 'golden-dust';
+
+      dust.style.left =
+        (Math.random() * 100) + 'vw';
+
+      dust.style.top =
+        (Math.random() * 80 + 10) + 'vh';
+
+      dust.style.animationDuration =
+        (Math.random() * 2 + 3) + 's';
+
+      dust.style.animationDelay =
+        (Math.random() * 0.5) + 's';
+
+      document.body.appendChild(dust);
+
+      setTimeout(() => {
+        dust.remove();
+      }, 5000);
+
+    }, 280);
+  }
+
+ 
+
 
   const chapter2Observer = new IntersectionObserver(
     entries => {

@@ -1521,3 +1521,43 @@ body.locked {
 .cherry-leaves span:nth-child(3n + 2) {
   animation-delay: -5s;
 }
+
+
+/* ✨ GOLDEN DUST EFFECT */
+.golden-dust {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff4b0 0%, #f5d76e 45%, transparent 75%);
+  box-shadow: 0 0 6px rgba(255, 230, 140, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+  animation: goldenDustFloat 4s ease-in-out forwards;
+}
+
+@keyframes goldenDustFloat {
+  0% {
+    transform: translate(0, 20px) scale(0.4);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: translate(30px, -40px) scale(1);
+    opacity: 0.75;
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(60px, -90px) scale(0.3);
+    opacity: 0;
+  }
+}
