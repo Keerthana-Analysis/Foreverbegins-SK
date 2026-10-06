@@ -149,7 +149,7 @@ body.locked {
   width: 100vw;
   height: 100vh;
   z-index: 10000;
-  background: #0f0507;
+  background: url("assets/Envelope background.jfif") center center / 100% 100% no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
