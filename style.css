@@ -1527,6 +1527,7 @@ body.locked {
 .golden-dust {
   position: fixed;
   width: 6px;
+  
   height: 6px;
   background: radial-gradient(circle, #fff4b0 0%, #f5d76e 45%, transparent 75%);
   box-shadow: 0 0 6px rgba(255, 230, 140, 0.45);
