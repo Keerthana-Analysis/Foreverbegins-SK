@@ -284,9 +284,10 @@ body.locked {
 .tap-hint {
   margin-top: 35px;
   font-size: 0.85rem;
-  color: #d4af37;
+  color: #9C6B1F;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
   animation: pulseText 2s infinite;
 }
 
