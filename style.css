@@ -1153,7 +1153,7 @@ body.locked {
   z-index: 2;
   pointer-events: none;
 
-  background-image: url("assets/mountain-background.jfif");
+  background-image: url("assets/mountain-background.jpeg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
